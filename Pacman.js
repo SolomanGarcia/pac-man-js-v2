@@ -19,4 +19,17 @@ class Pacman {
     }
     this.timer++;
   }
+
+  getNextMove(objectExist) {
+    let nextMovePos = this.pos + this.dir.movement;
+
+    if (
+      objectExist(nextMovePos, OBJECT_TYPE.WALL) ||
+      objectExist(nextMovePos, OBJECT_TYPE.GHOSTLAIR)
+    ) {
+      nextMovePos = this.pos;
+    }
+
+    return { nextMovePos, direction: this.dir };
+  }
 }
