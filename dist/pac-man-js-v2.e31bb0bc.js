@@ -185,6 +185,13 @@ var startButton = document.querySelector("#start-button"); // Game Constants
 var POWER_PILL_TIME = 10000; // ms
 
 var GLOBAL_SPEED = 80; // ms
+// Initial Setup
+
+var score = 0;
+var timer = null;
+var gameWin = false;
+var powerPillActive = false;
+var powerPillTimer = null;
 },{"./setup.js":"setup.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
