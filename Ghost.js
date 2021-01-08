@@ -19,5 +19,6 @@ class Ghost {
       return true;
     }
     this.timer++;
+    return false;
   }
 }
