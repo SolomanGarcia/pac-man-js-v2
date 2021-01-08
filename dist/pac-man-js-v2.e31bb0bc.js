@@ -526,6 +526,8 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
 
 var _setup = require("./setup.js");
 
+var _ghostmoves = require("./ghostmoves.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Ghost = /*#__PURE__*/function () {
@@ -555,7 +557,6 @@ var Ghost = /*#__PURE__*/function () {
       }
 
       this.timer++;
-      return false;
     }
   }, {
     key: "getNextMove",
@@ -583,7 +584,7 @@ var Ghost = /*#__PURE__*/function () {
   }, {
     key: "setNewPos",
     value: function setNewPos(nextMovePos, direction) {
-      this.nextMovePos = nextMovePos;
+      this.pos = nextMovePos;
       this.dir = direction;
     }
   }]);
@@ -592,7 +593,7 @@ var Ghost = /*#__PURE__*/function () {
 
 var _default = Ghost;
 exports.default = _default;
-},{"@babel/runtime/helpers/toConsumableArray":"node_modules/@babel/runtime/helpers/toConsumableArray.js","@babel/runtime/helpers/classCallCheck":"node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"node_modules/@babel/runtime/helpers/createClass.js","./setup.js":"setup.js"}],"index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/toConsumableArray":"node_modules/@babel/runtime/helpers/toConsumableArray.js","@babel/runtime/helpers/classCallCheck":"node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"node_modules/@babel/runtime/helpers/createClass.js","./setup.js":"setup.js","./ghostmoves.js":"ghostmoves.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _setup = require("./setup.js");
@@ -684,7 +685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57415" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

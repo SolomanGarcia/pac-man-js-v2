@@ -1,4 +1,5 @@
 import { DIRECTIONS, OBJECT_TYPE } from "./setup.js";
+import { randomMovement } from "./ghostmoves.js";
 
 class Ghost {
   constructor(speed = 5, startPos, movement, name) {
@@ -19,7 +20,6 @@ class Ghost {
       return true;
     }
     this.timer++;
-    return false;
   }
 
   getNextMove(objectExist) {
@@ -41,7 +41,7 @@ class Ghost {
   }
 
   setNewPos(nextMovePos, direction) {
-    this.nextMovePos = nextMovePos;
+    this.pos = nextMovePos;
     this.dir = direction;
   }
 }
