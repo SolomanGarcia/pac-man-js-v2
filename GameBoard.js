@@ -30,4 +30,12 @@ class GameBoard {
       if (CLASS_LIST[square] === OBJECT_TYPE.DOT) this.dotCount++;
     });
   }
+
+  addObject(pos, classes) {
+    this.grid[pos].classList.add(...classes);
+  }
+
+  removeObject(pos, classes) {
+    this.grid[pos].classList.remove(...classes);
+  }
 }
