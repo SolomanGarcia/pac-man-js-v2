@@ -15,3 +15,11 @@ let timer = null;
 let gameWin = false;
 let powerPillActive = false;
 let powerPillTimer = null;
+
+function gameOver(pacman, grid) {}
+
+function checkCollision(pacman, ghosts) {}
+
+function gameLoop(pacman, ghosts) {}
+
+function startGame() {}

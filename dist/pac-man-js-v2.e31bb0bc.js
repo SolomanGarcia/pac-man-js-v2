@@ -192,6 +192,14 @@ var timer = null;
 var gameWin = false;
 var powerPillActive = false;
 var powerPillTimer = null;
+
+function gameOver(pacman, grid) {}
+
+function checkCollision(pacman, ghosts) {}
+
+function gameLoop(pacman, ghosts) {}
+
+function startGame() {}
 },{"./setup.js":"setup.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
