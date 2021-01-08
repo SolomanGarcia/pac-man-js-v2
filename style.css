@@ -53,6 +53,16 @@ body {
 
 #start-button {
   margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  padding: .5em 1em;
+  transition: .2s ease;
+}
+
+#start-button:hover,
+#start-button:focus {
+  color: white;
+  background-color: darkblue;
 }
 
 .hide {
