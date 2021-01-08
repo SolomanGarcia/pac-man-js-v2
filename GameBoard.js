@@ -55,7 +55,7 @@ class GameBoard {
       const { classesToRemove, classesToAdd } = character.makeMove();
 
       if (character.rotation && nextMovePos !== character.pos) {
-        this.rotateDiv(nextMovePos, character.dir.direction);
+        this.rotateDiv(nextMovePos, character.dir.rotation);
         this.rotateDiv(character.pos, 0);
       }
 

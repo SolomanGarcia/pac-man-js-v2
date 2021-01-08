@@ -368,7 +368,7 @@ var GameBoard = /*#__PURE__*/function () {
             classesToAdd = _character$makeMove.classesToAdd;
 
         if (character.rotation && nextMovePos !== character.pos) {
-          this.rotateDiv(nextMovePos, character.dir.direction);
+          this.rotateDiv(nextMovePos, character.dir.rotation);
           this.rotateDiv(character.pos, 0);
         }
 
@@ -470,7 +470,7 @@ var Pacman = /*#__PURE__*/function () {
       }
 
       var nextMovePos = this.pos + dir.movement;
-      if (objectExist(nextMovePos, _setup.OBJECT_TYPE.WALL)) return;
+      if (objectExist(nextMovePos, _setup.OBJECT_TYPE.WALL) || objectExist(nextMovePos, _setup.OBJECT_TYPE.GHOSTLAIR)) return;
       this.dir = dir;
     }
   }]);
@@ -513,7 +513,9 @@ function gameOver(pacman, grid) {}
 
 function checkCollision(pacman, ghosts) {}
 
-function gameLoop(pacman, ghosts) {}
+function gameLoop(pacman, ghosts) {
+  gameBoard.moveCharacter(pacman);
+}
 
 function startGame() {
   gameWin = false;
@@ -526,6 +528,9 @@ function startGame() {
   document.addEventListener("keydown", function (e) {
     return pacman.handleKeyInput(e, gameBoard.objectExist);
   });
+  timer = setInterval(function () {
+    return gameLoop(pacman);
+  }, GLOBAL_SPEED);
 } // Initialize game
 
 
@@ -558,7 +563,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55806" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
