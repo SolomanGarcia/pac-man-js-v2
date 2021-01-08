@@ -9,4 +9,14 @@ class Pacman {
     this.powerPill = false;
     this.rotation = true;
   }
+
+  shouldMove() {
+    if (!this.dir) return false;
+
+    if (this.timer === this.speed) {
+      this.timer = 0;
+      return true;
+    }
+    this.timer++;
+  }
 }
