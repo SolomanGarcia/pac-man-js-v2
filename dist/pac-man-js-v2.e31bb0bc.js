@@ -355,6 +355,28 @@ var GameBoard = /*#__PURE__*/function () {
     value: function rotateDiv(pos, deg) {
       this.grid[pos].style.transform = "rotate(".concat(deg, "deg)");
     }
+  }, {
+    key: "moveCharacter",
+    value: function moveCharacter(character) {
+      if (character.shouldMove()) {
+        var _character$getNextMov = character.getNextMove(this.objectExist),
+            nextMovePos = _character$getNextMov.nextMovePos,
+            direction = _character$getNextMov.direction;
+
+        var _character$makeMove = character.makeMove(),
+            classesToRemove = _character$makeMove.classesToRemove,
+            classesToAdd = _character$makeMove.classesToAdd;
+
+        if (character.rotation && nextMovePos !== character.pos) {
+          this.rotateDiv(nextMovePos, character.dir.direction);
+          this.rotateDiv(character.pos, 0);
+        }
+
+        this.removeObject(character.pos, classesToRemove);
+        this.addObject(nextMovePos, classesToAdd);
+        character.setNewPos(nextMovePos, direction);
+      }
+    }
   }], [{
     key: "createGameBoard",
     value: function createGameBoard(DOMGrid, level) {
