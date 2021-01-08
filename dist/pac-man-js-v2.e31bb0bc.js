@@ -181,6 +181,10 @@ var _setup = require("./setup.js");
 var gameGrid = document.querySelector("#game");
 var scoreTable = document.querySelector("#score");
 var startButton = document.querySelector("#start-button"); // Game Constants
+
+var POWER_PILL_TIME = 10000; // ms
+
+var GLOBAL_SPEED = 80; // ms
 },{"./setup.js":"setup.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
