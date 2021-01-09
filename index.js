@@ -1,5 +1,5 @@
-import { LEVEL, OBJECT_TYPE } from "./setup";
-import { randomMovement } from "./ghostmoves";
+import { LEVEL, OBJECT_TYPE } from "./setup.js";
+import { randomMovement } from "./ghostmoves,js";
 // classes
 import GameBoard from "./GameBoard.js";
 import Pacman from "./Pacman.js";
